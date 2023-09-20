@@ -59,8 +59,8 @@ public class Score {
 	}
 
 	private void calcTotalAndAvg() {
-		this.total = kor + eng + math;
-		this.average = total / 3.0;
+		this.total = this.kor + this.eng + this.math;
+		this.average = this.total / 3.0;
 	}
 
 
