@@ -92,6 +92,14 @@
 			<scope>provided</scope>
 		</dependency>
 
+		<!-- ojdbc6 오라클 데이터베이스 드라이버 -->
+		<dependency>
+			<groupId>com.oracle.database.jdbc</groupId>
+			<artifactId>ojdbc6</artifactId>
+			<version>11.2.0.4</version>
+		</dependency>
+
+
 		<!-- @Inject -->
 		<dependency>
 			<groupId>javax.inject</groupId>
