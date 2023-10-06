@@ -11,6 +11,7 @@ import org.springframework.stereotype.Service;
 import com.spring.basic.score.dto.ScoreListResponseDTO;
 import com.spring.basic.score.dto.ScoreRequestDTO;
 import com.spring.basic.score.entity.Score;
+import com.spring.basic.score.repository.IScoreMapper;
 import com.spring.basic.score.repository.IScoreRepository;
 
 import lombok.RequiredArgsConstructor;
@@ -18,15 +19,15 @@ import lombok.RequiredArgsConstructor;
 //컨트롤러와 레파지토리 사이에 배치되어 기타 비즈니스 로직 처리
 //ex) 값을 가공, 예외 처리, dto로 변환, 트랜잭션 등등...
 @Service //빈 등록
-//@RequiredArgsConstructor
+@RequiredArgsConstructor
 public class ScoreService {
 	
-	private final IScoreRepository scoreRepository;
+	private final IScoreMapper scoreRepository;
 	
-	@Autowired
-	public ScoreService(@Qualifier("jdbc") IScoreRepository scoreRepository) {
-		this.scoreRepository = scoreRepository;
-	}
+//	@Autowired
+//	public ScoreService(@Qualifier("spring") IScoreRepository scoreRepository) {
+//		this.scoreRepository = scoreRepository;
+//	}
 	
 	//등록 중간처리
 	//컨트롤러는 나에게 DTO를 줬어.

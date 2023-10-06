@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -66,23 +67,33 @@
 </head>
 <body>
 
-    <div class="wrap">
-        <section class="score-main">
-            <h1>${s.stuName}님 성적 정보</h1>
-            <ul>
-                <li># 국어: ${s.kor}점</li>
-                <li># 영어: ${s.eng}점</li>
-                <li># 수학: ${s.math}점</li>
-                <li># 총점: ${s.total}점</li>
-                <li># 평균: ${s.average}점</li>
-                <li># 학점: ${s.grade}</li>
-            </ul>
-            <div class="btn-group">
-                <a href="/basic/score/list" class="list-btn">목록</a>
-                <a href="/basic/score/modify?stuNum=${s.stuNum}" class="mod-btn">수정</a>
-            </div>
-        </section>
-    </div>
+	<c:choose>
+	<c:when test="${s == null}">
+		<h1>존재하지 않는 학생이거나, 잘못된 접근입니다.</h1>
+		<a href="/basic/score/list" class="list-btn">목록</a>
+	</c:when>
+	
+	<c:otherwise>
+	    <div class="wrap">
+	        <section class="score-main">
+	            <h1>${s.stuName}님 성적 정보</h1>
+	            <ul>
+	                <li># 국어: ${s.kor}점</li>
+	                <li># 영어: ${s.eng}점</li>
+	                <li># 수학: ${s.math}점</li>
+	                <li># 총점: ${s.total}점</li>
+	                <li># 평균: ${s.average}점</li>
+	                <li># 학점: ${s.grade}</li>
+	            </ul>
+	            <div class="btn-group">
+	                <a href="/basic/score/list" class="list-btn">목록</a>
+	                <a href="/basic/score/modify?stuNum=${s.stuNum}" class="mod-btn">수정</a>
+	            </div>
+	        </section>
+	    </div>
+    </c:otherwise>
+    
+    </c:choose>
 
 </body>
 </html>

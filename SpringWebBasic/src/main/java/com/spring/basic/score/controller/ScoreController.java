@@ -71,6 +71,7 @@ public class ScoreController {
 	@GetMapping("/remove")
 	public String remove(int stuNum) {
 		System.out.println("/score/remove: GET!");
+		System.out.println("요청과 함께 넘어온 번호: " + stuNum);
 		
 		service.delete(stuNum);
 		return "redirect:/score/list";

@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+    "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<!-- 구현하고자 하는 인터페이스의 풀 경로를 작성 -->
+<mapper namespace="com.spring.basic.score.repository.IScoreMapper">
+
+	<!-- DB 컬럼명과 Entity 객체의 필드명을 맞추는 resultMap을 선언 -->
+	<resultMap type="com.spring.basic.score.entity.Score" id="scoreMap">
+		<!-- 테이블에서 PRIMARY KEY 컬럼은 id 태그로, 나머지는 result로 선언 -->
+		<id property="stuNum" column="stu_num" />
+		<result property="stuName" column="stu_name" />
+	</resultMap>
+
+
+	<!-- 점수 등록 기능 -->
+	<insert id="save">
+		INSERT INTO score
+		VALUES(score_seq.NEXTVAL, #{stuName}, #{kor}, #{eng}, 
+		#{math}, #{total}, #{average}, #{grade})
+	</insert>
+	
+	<!-- 점수 전체 조회 기능 -->
+	<!-- findAll의 리턴 타입은 List<Score> 입니다.
+		List는 직접 언급하실 필요 없어요. (조회되는 데이터가 여러 행이면 알아서 List로 포장합니다.)
+		Score 객체는 Score 테이블의 컬럼명과 필드명이 완벽히 일치하지 않기 때문에
+		객체로 포장할 때 위에 선언한 resultMap을 참조해서 객체로 포장하라는 얘기입니다.
+	 -->
+	<select id="findAll" resultMap="scoreMap">
+		SELECT * FROM score
+	</select>
+	
+	<!-- 점수 삭제 기능 -->
+	<delete id="deleteByStuNum">
+		DELETE FROM score 
+		WHERE stu_num = #{stuNum}
+	</delete>
+	
+	<!-- 점수 상세 정보 -->
+	<select id="findByStuNum" resultMap="scoreMap">
+		SELECT * FROM score
+		WHERE stu_num = #{stuNum}
+	</select>
+	
+	<!-- 점수 수정 -->
+	<update id="modify">
+		UPDATE score
+		SET kor=#{kor}, eng=#{eng}, math=#{math},
+		total=#{total}, average=#{average}, grade=#{grade}
+		WHERE stu_num=#{stuNum}
+	</update>
+
+</mapper>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
