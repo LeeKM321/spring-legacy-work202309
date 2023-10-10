@@ -38,6 +38,16 @@
 	 	<property name="dataSource" ref="ds" />
 	 	<!-- 인터페이스의 구현체가 될 xml 파일의 위치를 지목하는 setter 메서드 -->
 	 	<property name="mapperLocations" value="classpath:/mappers/*Mapper.xml" />
+	 	<!-- <property name="mapperLocations">
+	 		<array>
+	 			<value>classpath:/mappers/ScoreMapper.xml</value>
+	 			<value>classpath:/mappers/BoardMapper.xml</value>
+	 			<value>classpath:/mappers/ReplyMapper.xml</value>
+	 			<value>classpath:/mappers/ImgMapper.xml</value>
+	 		</array>
+	 	</property> -->
+	 	
+	 	
 	 </bean>
 	 
 	 
@@ -48,6 +58,7 @@
 		그 인터페이스가 존재하는 패키지의 경로를 탐색하라는 태그입니다.
 	 -->
 	<mybatis-spring:scan base-package="com.spring.basic.score.repository"/>
+	<mybatis-spring:scan base-package="com.spring.basic.board.repository"/>
 		
 </beans>
 
