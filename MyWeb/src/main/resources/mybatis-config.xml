@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE configuration PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+    "http://mybatis.org/dtd/mybatis-3-config.dtd">
+
+<configuration>
+
+	<settings>
+		
+		<!-- 언더스코어 표기법을 카멜 케이스로 자동 변환하는 설정을 true로 지정 -->
+		<setting name="mapUnderscoreToCamelCase" value="true"/>
+		
+	</settings>
+	
+	<!-- resultType 등 패키지 풀 경로 및 클래스 타입을 작성할 때
+		별칭을 대신 사용할 수 있게 하는 설정. -->
+	<typeAliases>
+		<typeAlias type="com.spring.myweb.freeboard.entity.FreeBoard" alias="freeboard" />
+	</typeAliases>
+
+</configuration>
+
+
+
+
+
+
+
+
+
+

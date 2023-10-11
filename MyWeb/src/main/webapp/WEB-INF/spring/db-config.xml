@@ -38,6 +38,7 @@
 	 <!-- 마이바티스 SQL 동작을 위한 핵심 객체 SqlSessionFactory 클래스 빈 등록 -->
 	 <bean id="sqlSessionFactory" class="org.mybatis.spring.SqlSessionFactoryBean">
 	 	<property name="dataSource" ref="ds" />
+	 	<property name="configLocation" value="classpath:/mybatis-config.xml" />
 	 	<property name="mapperLocations" value="classpath:/mappers/*Mapper.xml" /> 	
 	 </bean>
 	 
@@ -48,6 +49,6 @@
 		이미 xml 파일에는 해당 파일이 어떤 인터페이스를 구현하는 구현체인지는 명시되어 있습니다.
 		그 인터페이스가 존재하는 패키지의 경로를 탐색하라는 태그입니다.
 	 -->
-	<mybatis-spring:scan base-package="com.spring.basic.score.repository"/>
+	<mybatis-spring:scan base-package="com.spring.myweb.freeboard.mapper"/>
 		
 </beans>
