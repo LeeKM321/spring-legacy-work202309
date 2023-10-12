@@ -13,8 +13,13 @@
 
 	<!-- css, img, js...의 파일 경로가 복잡할때 사용합니다.
 		jsp 파일 같은 데서 경로 긴 거 일일히 쓰기 귀찮잖아요. 그럴 때 선언합니다.
-		내부 경로를 숨겨주는 역할도 합니다. -->
-	<resources mapping="/resources/**" location="/resources/" />
+		내부 경로를 숨겨주는 역할도 합니다. 
+		mapping: 페이지 소스에서 드러나는 경로, location: 실제 폴더 경로
+	-->
+	<resources mapping="/css/**" location="/resources/static/css/" />
+	<resources mapping="/js/**" location="/resources/static/js/" />
+	<resources mapping="/img/**" location="/resources/static/img/" />
+	<resources mapping="/fonts/**" location="/resources/static/fonts/" />
 
 	<!-- 
 		컨트롤러가 리턴한 문자열 앞, 뒤에 적절한 경로를 붙여서
