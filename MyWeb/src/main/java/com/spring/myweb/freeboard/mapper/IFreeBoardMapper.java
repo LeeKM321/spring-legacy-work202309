@@ -12,6 +12,9 @@ public interface IFreeBoardMapper {
 	//글 목록
 	List<FreeBoard> getList();
 	
+	//총 게시물 개수 구하기
+	int getTotal();
+	
 	//상세보기
 	FreeBoard getContent(int bno);
 	

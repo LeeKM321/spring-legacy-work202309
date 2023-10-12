@@ -42,7 +42,7 @@
                         	<c:forEach var="vo" items="${boardList}">
 	                            <tr>
 	                                <td>${vo.bno}</td>
-	                                <td><a href="<c:url value='/freeBoard/freeDetail?bno=' />">${vo.title}</a></td>
+	                                <td><a href="/myweb/freeboard/content?bno=${vo.bno}">${vo.title}</a></td>
 	                                <td>${vo.writer}</td>
 	                                <td>${vo.date}</td>
 	                            </tr>

@@ -12,6 +12,12 @@
 	
 	<select id="getList" resultType="freeboard">
 		SELECT * FROM freeboard
+		ORDER BY bno DESC
+	</select>
+	
+	<select id="getTotal" resultType="int">
+		SELECT COUNT(*)
+		FROM freeboard
 	</select>
 	
 	<select id="getContent" resultType="freeboard">
