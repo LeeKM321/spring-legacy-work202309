@@ -16,7 +16,7 @@ import org.springframework.test.web.servlet.setup.MockMvcBuilders;
 import org.springframework.web.context.WebApplicationContext;
 import org.springframework.web.servlet.ModelAndView;
 
-import com.spring.myweb.freeboard.dto.FreeDetailResponseDTO;
+import com.spring.myweb.freeboard.dto.response.FreeDetailResponseDTO;
 
 @ExtendWith(SpringExtension.class)
 @ContextConfiguration(locations = {"file:src/main/webapp/WEB-INF/spring/db-config.xml", 

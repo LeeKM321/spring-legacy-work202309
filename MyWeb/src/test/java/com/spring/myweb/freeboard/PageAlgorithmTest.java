@@ -7,6 +7,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit.jupiter.SpringExtension;
 
+import com.spring.myweb.freeboard.dto.page.Page;
 import com.spring.myweb.freeboard.mapper.IFreeBoardMapper;
 
 @ExtendWith(SpringExtension.class)
@@ -23,7 +24,10 @@ public class PageAlgorithmTest {
 		int cpp = 20; // 한 화면에 보여줄 게시물 개수
 		int btnNum = 5; // 한 화면에 보여줄 버튼 개수
 		
-		int articleTotalCount = mapper.getTotal();
+		int articleTotalCount = mapper.getTotal(Page.builder()
+				.pageNo(16)
+				.amount(20)
+				.build());
 		System.out.println("총 게시물 수: " + articleTotalCount);
 		
 		//끝 페이지 번호 구하기
