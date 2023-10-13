@@ -1,5 +1,7 @@
 ﻿<%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+    
+    <%@ include file="../include/header.jsp" %>
 
     <section>
         <div class="container">
@@ -90,6 +92,8 @@
             </div>
         </div>
     </section>
+    
+    <%@ include file="../include/footer.jsp" %>
 
     <script>
         /*아이디 형식 검사 스크립트*/
