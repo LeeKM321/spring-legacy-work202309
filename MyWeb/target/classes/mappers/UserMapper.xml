@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+    "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.spring.myweb.user.mapper.IUserMapper">
+	
+	<insert id="join">
+		INSERT INTO users
+		(user_id, user_pw, user_name, user_phone1, user_phone2, user_email1, 
+		user_email2, addr_basic, addr_detail, addr_zip_num)
+		VALUES(#{userId}, #{userPw}, #{userName}, #{userPhone1}, #{userPhone2},
+		#{userEmail1}, #{userEmail2}, #{addrBasic}, #{addrDetail}, #{addrZipNum})
+	</insert>
+	
+	<select id="idCheck" resultType="int">
+		SELECT COUNT(*)
+		FROM users
+		WHERE user_id = #{id}
+	</select>
+	
+	<select id="login" resultType="string">
+		SELECT user_pw FROM users
+		WHERE user_id = #{id}
+	</select>
+	
+	<select id="getInfo" resultType="user">
+		SELECT * FROM users
+		WHERE user_id = #{id}
+	</select>
+	
+	<update id="updateUser">
+		UPDATE users
+		SET user_pw = #{userPw}, user_name = #{userName},
+		user_email1 = #{userEmail1}, user_email2 = #{userEmail2},
+		user_phone1 = #{userPhone1}, user_phone2 = #{userPhone2},
+		addr_basic = #{addrBasic}, addr_detail = #{addrDetail},
+		addr_zip_num = #{addrZipNum}
+		WHERE user_id = #{userId}
+	</update>
+	
+	
+	
+
+</mapper>
+
+
+
+
+
+
+
+
