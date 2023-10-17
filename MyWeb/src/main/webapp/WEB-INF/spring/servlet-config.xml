@@ -10,6 +10,15 @@
 	
 	<!-- 자동으로 컨트롤러와 매핑 메서드를 탐색(핸들러 맵핑, 핸들러 어댑터 빈 등록) -->
 	<annotation-driven />
+	
+	<!-- 외부에 따로 설정한 설정 파일을 참조하는 곳에 사용하는 클래스 -->
+	<beans:bean class="org.springframework.context.support.PropertySourcesPlaceholderConfigurer">
+		<beans:property name="locations">
+			<beans:list>
+				<beans:value>classpath:/properties/email.properties</beans:value>
+			</beans:list>
+		</beans:property>
+	</beans:bean>
 
 	<!-- css, img, js...의 파일 경로가 복잡할때 사용합니다.
 		jsp 파일 같은 데서 경로 긴 거 일일히 쓰기 귀찮잖아요. 그럴 때 선언합니다.

@@ -177,13 +177,30 @@
 			<version>2.0.6</version>
 		</dependency>
 
-		<!-- jackson-databind: 데이터를 JSON 형태로 파싱해 주는 라이브러리 
-			또한, JSON 데이터를 Java 객체로도 표현해 주는 라이브러리. -->
+		<!-- jackson-databind: 데이터를 JSON 형태로 파싱해 주는 라이브러리 또한, JSON 데이터를 Java 객체로도 
+			표현해 주는 라이브러리. -->
 		<dependency>
 			<groupId>com.fasterxml.jackson.core</groupId>
 			<artifactId>jackson-databind</artifactId>
 			<version>2.14.2</version>
 		</dependency>
+
+		<!-- java에서 mail을 보내기 위해 필요로 하는 라이브러리 -->
+		<dependency>
+			<groupId>javax.mail</groupId>
+			<artifactId>mail</artifactId>
+			<version>1.4.7</version>
+		</dependency>
+
+		<!-- 간단한 설정을 통해 메일 라이브러리를 사용할 수 있도록 도와주는 spring-context-support 
+			메일 뿐만 아니라 캐시메모리, 스케쥴링 UI와 관련된 다양한 부가기능을 지원하는 라이브러리 -->
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-context-support</artifactId>
+			<version>${org.springframework-version}</version>
+		</dependency>
+
+
 
 
 	</dependencies> <!-- 의존성 라이브러리 선언 끝 -->

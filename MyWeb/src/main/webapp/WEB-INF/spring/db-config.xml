@@ -17,7 +17,7 @@
 		(.properties 파일은 gitignore에 추가하여 외부로 공개되지 않게 합니다.)
 	 -->
 	 
-	 <!-- 외부에 따로 설정한 설정 파일을 참조하는 곳에 사용하는 클래스 -->
+	<!-- 외부에 따로 설정한 설정 파일을 참조하는 곳에 사용하는 클래스 -->
 	<bean class="org.springframework.context.support.PropertySourcesPlaceholderConfigurer">
 		<property name="location" value="classpath:/properties/Hikari.properties" />
 	</bean>
