@@ -192,13 +192,21 @@
 			<version>1.4.7</version>
 		</dependency>
 
-		<!-- 간단한 설정을 통해 메일 라이브러리를 사용할 수 있도록 도와주는 spring-context-support 
-			메일 뿐만 아니라 캐시메모리, 스케쥴링 UI와 관련된 다양한 부가기능을 지원하는 라이브러리 -->
+		<!-- 간단한 설정을 통해 메일 라이브러리를 사용할 수 있도록 도와주는 spring-context-support 메일 뿐만 아니라 
+			캐시메모리, 스케쥴링 UI와 관련된 다양한 부가기능을 지원하는 라이브러리 -->
 		<dependency>
 			<groupId>org.springframework</groupId>
 			<artifactId>spring-context-support</artifactId>
 			<version>${org.springframework-version}</version>
 		</dependency>
+
+		<!-- spring-security-web -->
+		<dependency>
+			<groupId>org.springframework.security</groupId>
+			<artifactId>spring-security-web</artifactId>
+			<version>5.3.13.RELEASE</version>
+		</dependency>
+
 
 
 

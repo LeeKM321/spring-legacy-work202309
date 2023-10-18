@@ -23,6 +23,7 @@
 			<param-value>
 				/WEB-INF/spring/servlet-config.xml
 				/WEB-INF/spring/email-config.xml
+				/WEB-INF/spring/interceptor-config.xml
 			</param-value>
 		</init-param>
 		<load-on-startup>1</load-on-startup>

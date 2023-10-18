@@ -1,5 +1,7 @@
 package com.spring.myweb.user.controller;
 
+import javax.servlet.http.HttpSession;
+
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -77,15 +79,19 @@ public class UserController {
 	
 	//로그인 요청
 	@PostMapping("/userLogin")
-	public String login(String userId, String userPw, Model model) {
-		boolean loginFlag = service.login(userId, userPw);
-		if(loginFlag) { 
-			return "user/userMypage";
-		} else {
-			model.addAttribute("msg", "loginFail");
-			return "user/userLogin";
-		}
+	public void login(String userId, String userPw, Model model) {
+		System.out.println("나는 UserController의 login이다!!!!");
+		model.addAttribute("result", service.login(userId, userPw));
 	}
+	
+	//마이페이지 이동 요청
+	@GetMapping("/userMypage")
+	public void userMypage(HttpSession session, Model model) {
+		//마이페이지는 로그인 한 사람만 이동 가능 -> 세션에 아이디가 있다!
+		String id = (String) session.getAttribute("login");
+		model.addAttribute("userInfo", service.getInfo(id));
+	}
+	
 	
 	
 

@@ -37,6 +37,8 @@
     	const msg = '${msg}';
     	if(msg === 'joinSuccess') {
     		alert('회원 가입을 환영합니다!');
+    	} else if(msg === 'loginFail') {
+    		alert('로그인에 실패했습니다. 아이디와 비밀번호를 확인하세요.');
     	}
 
         //id, pw 입력란이 공백인 지 아닌지 확인한 후, 공백이 아니라면 submit을 진행하세요.
@@ -55,7 +57,7 @@
         }
 
         document.getElementById('joinBtn').onclick = () => {
-            location.href='/myweb/user/userJoin';
+            location.href='${pageContext.request.contextPath}/user/userJoin';
         }
 
     	

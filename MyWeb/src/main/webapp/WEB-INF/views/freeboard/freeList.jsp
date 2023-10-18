@@ -16,7 +16,7 @@
                     <hr>
                     
                     <!--form select를 가져온다 -->
-            <form action="/myweb/freeboard/freeList">
+            <form action="${pageContext.request.contextPath}/freeboard/freeList">
 	    		<div class="search-wrap">
                       <button type="submit" class="btn btn-info search-btn">검색</button>
                       <input type="text" name="keyword" class="form-control search-input" value="${pc.page.keyword}">
@@ -43,7 +43,7 @@
 	                            <tr>
 	                                <td>${vo.bno}</td>
 	                                <td>
-	                                	<a href="/myweb/freeboard/content?bno=${vo.bno}&pageNo=${pc.page.pageNo}&amount=${pc.page.amount}&keyword=${pc.page.keyword}&condition=${pc.page.condition}">${vo.title}</a>
+	                                	<a href="${pageContext.request.contextPath}/freeboard/content?bno=${vo.bno}&pageNo=${pc.page.pageNo}&amount=${pc.page.amount}&keyword=${pc.page.keyword}&condition=${pc.page.condition}">${vo.title}</a>
 	                                </td>
 	                                <td>${vo.writer}</td>
 	                                <td>${vo.date}</td>
@@ -55,7 +55,7 @@
 
 
                     <!--페이지 네이션을 가져옴-->
-		    <form action="/myweb/freeboard/freeList" name="pageForm">
+		    <form action="${pageContext.request.contextPath}/freeboard/freeList" name="pageForm">
                 <div class="text-center">
                     <hr>
                     <ul id="pagination" class="pagination pagination-sm">
@@ -71,7 +71,7 @@
                             <li><a href="#" data-pagenum="${pc.end+1}">다음</a></li>
                         </c:if>
                     </ul>
-                    <button type="button" class="btn btn-info" onclick="location.href='/myweb/freeboard/freeRegist'">글쓰기</button>
+                    <button type="button" class="btn btn-info" onclick="location.href='${pageContext.request.contextPath}/freeboard/freeRegist'">글쓰기</button>
                 </div>
 
                 <input type="hidden" name="pageNo" value="${pc.page.pageNo}">
