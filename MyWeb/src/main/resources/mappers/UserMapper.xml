@@ -61,8 +61,7 @@
 		FROM users u
 		LEFT JOIN freeboard f
 		ON u.user_id = f.writer
-		WHERE user_id
-		= #{id}
+		WHERE user_id = #{id}
 		ORDER BY f.bno DESC
 	</select>
 
