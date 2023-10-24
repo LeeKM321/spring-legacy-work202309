@@ -3,6 +3,7 @@ package com.spring.myweb.snsboard.entity;
 import java.time.LocalDateTime;
 
 import lombok.AllArgsConstructor;
+import lombok.Builder;
 import lombok.EqualsAndHashCode;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -34,6 +35,7 @@ CREATE SEQUENCE snsboard_seq
 @EqualsAndHashCode
 @NoArgsConstructor
 @AllArgsConstructor
+@Builder
 public class SnsBoard {
 	
 	private int bno;
